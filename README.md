@@ -4,43 +4,43 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-یک سیستم کامل احراز هویت (Authentication) با استفاده از Python خام (بدون فریمورک) برای بک‌اند و JavaScript/HTML/CSS برای فرانت‌اند. این پروژه شامل ثبت‌نام، ورود، تأیید OTP، مدیریت Session و رابط کاربری مدرن با پشتیبانی RTL است.
+A complete authentication system built with raw Python (no framework) for the backend and JavaScript/HTML/CSS for the frontend. This project includes user registration, login, OTP verification, session management, and a modern UI with RTL support.
 
-## ✨ ویژگی‌ها
+## ✨ Features
 
-- ✅ **ثبت نام کاربر** - با نام، نام خانوادگی، ایمیل یا شماره تلفن
-- ✅ **تأیید OTP** - ارسال کد تأیید 6 رقمی از طریق ایمیل
-- ✅ **ورود هوشمند** - ورود مستقیم با کوکی معتبر (2 روزه)
-- ✅ **مدیریت Session** - مدیریت خودکار session با کوکی‌های امن
-- ✅ **رابط کاربری مدرن** - طراحی Split-Screen با انیمیشن‌های حرفه‌ای
-- ✅ **پشتیبانی RTL** - رابط کاربری فارسی با چیدمان راست به چپ
-- ✅ **واکنش‌گرا** - طراحی Responsive برای موبایل، تبلت و دسکتاپ
-- ✅ **امنیت** - کوکی‌های HttpOnly و SameSite برای محافظت از session
+- ✅ **User Registration** - With first name, last name, email or phone number
+- ✅ **OTP Verification** - 6-digit verification code sent via email
+- ✅ **Smart Login** - Direct login with valid cookie (2 days)
+- ✅ **Session Management** - Automatic session management with secure cookies
+- ✅ **Modern UI** - Split-screen design with professional animations
+- ✅ **RTL Support** - Persian/Farsi UI with right-to-left layout
+- ✅ **Responsive Design** - Works on mobile, tablet, and desktop
+- ✅ **Security** - HttpOnly and SameSite cookies for session protection
 
-## 🚀 شروع سریع
+## 🚀 Quick Start
 
-### پیش‌نیازها
+### Prerequisites
 
-- Python 3.7 یا بالاتر
-- مرورگر وب مدرن (Chrome, Firefox, Edge, Safari)
-- دسترسی به اینترنت (برای ارسال ایمیل OTP)
+- Python 3.7 or higher
+- Modern web browser (Chrome, Firefox, Edge, Safari)
+- Internet connection (for sending OTP emails)
 
-### نصب و راه‌اندازی
+### Installation & Setup
 
-1. **کلون یا دانلود پروژه**
+1. **Clone or download the project**
    ```bash
-   git clone https://github.com/yourusername/python-js-authentication-system.git
+   git clone https://github.com/ALIASHRAFPOUR1382/python-js-authentication-system.git
    cd python-js-authentication-system
    ```
 
-2. **تنظیم ایمیل (اختیاری)**
+2. **Configure Email (Optional)**
    
-   برای ارسال واقعی OTP از طریق ایمیل:
+   To send real OTP via email:
    ```bash
    python setup_email.py
    ```
    
-   یا فایل `email_config.json` را به صورت دستی ایجاد کنید:
+   Or manually create `email_config.json`:
    ```json
    {
      "smtp_server": "smtp.gmail.com",
@@ -50,9 +50,9 @@
    }
    ```
    
-   > 📝 **نکته**: برای Gmail، باید از [App Password](https://support.google.com/accounts/answer/185833) استفاده کنید.
+   > 📝 **Note**: For Gmail, you must use an [App Password](https://support.google.com/accounts/answer/185833).
 
-3. **اجرای سرور**
+3. **Run the Server**
    
    **Windows:**
    ```bash
@@ -65,79 +65,79 @@
    ./start_server.sh
    ```
    
-   **یا به صورت دستی:**
+   **Or manually:**
    ```bash
    cd backend
    python server.py
    ```
 
-4. **باز کردن مرورگر**
+4. **Open Browser**
    
-   مرورگر خود را باز کنید و به آدرس زیر بروید:
+   Open your browser and navigate to:
    ```
    http://localhost:8000
    ```
 
-## 📖 راهنمای استفاده
+## 📖 Usage Guide
 
-### ثبت نام
+### Registration
 
-1. به صفحه ثبت‌نام بروید (`http://localhost:8000/register.html`)
-2. نام، نام خانوادگی و ایمیل یا شماره تلفن را وارد کنید
-3. روی دکمه "Sign Up" کلیک کنید
-4. کد OTP 6 رقمی را از ایمیل خود دریافت کنید
-5. کد را وارد کنید و ثبت‌نام را تکمیل کنید
-6. پس از تأیید، به داشبورد هدایت می‌شوید
+1. Go to the registration page (`http://localhost:8000/register.html`)
+2. Enter your first name, last name, and email or phone number
+3. Click the "Sign Up" button
+4. Receive the 6-digit OTP code from your email
+5. Enter the code to complete registration
+6. After verification, you'll be redirected to the dashboard
 
-### ورود
+### Login
 
-1. به صفحه ورود بروید (`http://localhost:8000/index.html`)
-2. ایمیل یا شماره تلفن خود را وارد کنید
-3. **اگر کوکی معتبر دارید (کمتر از 2 روز)**: مستقیماً وارد می‌شوید
-4. **در غیر این صورت**: کد OTP برای شما ارسال می‌شود
-5. کد را وارد کنید و وارد شوید
+1. Go to the login page (`http://localhost:8000/index.html`)
+2. Enter your email or phone number
+3. **If you have a valid cookie (less than 2 days)**: You'll be logged in directly
+4. **Otherwise**: An OTP code will be sent to you
+5. Enter the code to log in
 
-### خروج
+### Logout
 
-از داشبورد، روی دکمه "Logout" کلیک کنید.
+From the dashboard, click the "Logout" button.
 
-## 📁 ساختار پروژه
+## 📁 Project Structure
 
 ```
 .
 ├── backend/
-│   ├── server.py          # سرور HTTP اصلی
-│   ├── database.py        # مدیریت پایگاه داده JSON
-│   ├── auth.py            # مدیریت احراز هویت و session
-│   ├── otp_manager.py     # مدیریت کدهای OTP
-│   └── email_sender.py    # ارسال ایمیل OTP
+│   ├── server.py          # Main HTTP server
+│   ├── database.py        # JSON database management
+│   ├── auth.py            # Authentication and session management
+│   ├── otp_manager.py     # OTP code management
+│   └── email_sender.py    # Email OTP sending
 ├── frontend/
-│   ├── index.html         # صفحه ورود
-│   ├── register.html      # صفحه ثبت نام
-│   ├── dashboard.html     # داشبورد کاربر
+│   ├── index.html         # Login page
+│   ├── register.html     # Registration page
+│   ├── dashboard.html     # User dashboard
 │   ├── css/
-│   │   └── style.css      # استایل‌های CSS
+│   │   └── style.css      # CSS styles
 │   └── js/
-│       └── auth.js        # منطق JavaScript
-├── data/                  # پوشه ذخیره داده‌ها (خودکار ایجاد می‌شود)
-│   ├── users.json         # اطلاعات کاربران
-│   ├── otp_storage.json   # کدهای OTP
-│   └── temp_data.json     # داده‌های موقت
-├── start_server.bat       # اسکریپت اجرای سرور (Windows)
-├── start_server.sh        # اسکریپت اجرای سرور (Linux/Mac)
-├── setup_email.py         # راه‌اندازی تنظیمات ایمیل
-├── test_email.py          # تست ارسال ایمیل
-├── cleanup_database.py    # پاکسازی داده‌های تست
-├── README.md              # این فایل
-├── HOW_TO_RUN.md         # راهنمای اجرا
-├── TROUBLESHOOTING.md    # راهنمای عیب‌یابی
-└── .gitignore            # فایل‌های نادیده گرفته شده
+│       └── auth.js        # JavaScript logic
+├── data/                  # Data storage folder (auto-created)
+│   ├── users.json         # User information
+│   ├── otp_storage.json   # OTP codes
+│   └── temp_data.json     # Temporary data
+├── start_server.bat       # Server startup script (Windows)
+├── start_server.sh        # Server startup script (Linux/Mac)
+├── setup_email.py         # Email configuration setup
+├── test_email.py          # Email sending test
+├── cleanup_database.py    # Test data cleanup
+├── README.md              # This file
+├── HOW_TO_RUN.md         # Running guide
+├── TROUBLESHOOTING.md    # Troubleshooting guide
+└── .gitignore            # Ignored files
 ```
 
 ## 🔌 API Endpoints
 
 ### POST `/api/register`
-ثبت نام کاربر جدید
+Register a new user
 
 **Request:**
 ```json
@@ -161,7 +161,7 @@
 ```
 
 ### POST `/api/verify-otp`
-تأیید کد OTP برای ثبت نام
+Verify OTP code for registration
 
 **Request:**
 ```json
@@ -188,7 +188,7 @@
 ```
 
 ### POST `/api/login`
-ورود به سیستم
+Login to the system
 
 **Request:**
 ```json
@@ -225,7 +225,7 @@
 ```
 
 ### POST `/api/verify-login-otp`
-تأیید کد OTP برای ورود
+Verify OTP code for login
 
 **Request:**
 ```json
@@ -236,7 +236,7 @@
 ```
 
 ### GET `/api/check-auth`
-بررسی وضعیت احراز هویت
+Check authentication status
 
 **Response:**
 ```json
@@ -253,7 +253,7 @@
 ```
 
 ### POST `/api/logout`
-خروج از سیستم
+Logout from the system
 
 **Response:**
 ```json
@@ -263,105 +263,105 @@
 }
 ```
 
-## 🔒 امنیت
+## 🔒 Security
 
-- ✅ کدهای OTP پس از 5 دقیقه منقضی می‌شوند
-- ✅ Session‌ها پس از 2 روز منقضی می‌شوند
-- ✅ کوکی‌ها با `HttpOnly` و `SameSite=Lax` تنظیم شده‌اند
-- ✅ استفاده از token‌های امن برای session
-- ✅ اعتبارسنجی ورودی‌های کاربر
-- ✅ محافظت در برابر تکرار OTP
+- ✅ OTP codes expire after 5 minutes
+- ✅ Sessions expire after 2 days
+- ✅ Cookies are set with `HttpOnly` and `SameSite=Lax`
+- ✅ Secure token generation for sessions
+- ✅ User input validation
+- ✅ Protection against OTP reuse
 
-## ⚠️ نکات مهم
+## ⚠️ Important Notes
 
-> **این پروژه برای استفاده آموزشی و توسعه است**
+> **This project is for educational and development purposes**
 
-- 🔐 در محیط production، باید از HTTPS استفاده کنید
-- 📧 برای ارسال واقعی OTP، باید از سرویس‌های SMS/Email استفاده کنید
-- 🗄️ برای امنیت بیشتر، از دیتابیس واقعی (PostgreSQL, MySQL) استفاده کنید
-- 🛡️ برای امنیت بیشتر، از فریمورک‌های امن مانند Flask یا Django استفاده کنید
-- 🔑 داده‌ها در فایل JSON ذخیره می‌شوند (برای production از دیتابیس واقعی استفاده کنید)
+- 🔐 In production, you must use HTTPS
+- 📧 For real OTP delivery, use SMS/Email services
+- 🗄️ For better security, use a real database (PostgreSQL, MySQL)
+- 🛡️ For enhanced security, use secure frameworks like Flask or Django
+- 🔑 Data is stored in JSON files (use a real database for production)
 
-## 🛠️ توسعه
+## 🛠️ Development
 
-### افزودن سرویس ارسال OTP واقعی
+### Adding Real OTP Delivery Service
 
-در فایل `backend/email_sender.py`، می‌توانید از سرویس‌های زیر استفاده کنید:
+In `backend/email_sender.py`, you can use the following services:
 
-- **SMS**: استفاده از API سرویس‌های SMS ایرانی (کاوه‌پیامک، پیامک‌گستر، ...)
-- **Email**: استفاده از SMTP برای ارسال ایمیل (Gmail, Outlook, ...)
+- **SMS**: Use SMS service APIs (KavehSMS, PayamGostar, etc.)
+- **Email**: Use SMTP for email delivery (Gmail, Outlook, etc.)
 
-### تغییر مدت زمان session
+### Changing Session Duration
 
-در فایل `backend/server.py`، متغیر `max_age_days` در متد `_set_cookie` را تغییر دهید:
+In `backend/server.py`, change the `max_age_days` variable in the `_set_cookie` method:
 ```python
 cookie = self._set_cookie('session_token', session_token, max_age_days=2)
 ```
 
-### تغییر مدت زمان OTP
+### Changing OTP Expiry Time
 
-در فایل `backend/otp_manager.py`، متغیر `OTP_EXPIRY_MINUTES` را تغییر دهید:
+In `backend/otp_manager.py`, change the `OTP_EXPIRY_MINUTES` variable:
 ```python
-OTP_EXPIRY_MINUTES = 5  # تغییر به زمان دلخواه
+OTP_EXPIRY_MINUTES = 5  # Change to desired time
 ```
 
-## 🐛 عیب‌یابی
+## 🐛 Troubleshooting
 
-اگر با مشکلی مواجه شدید، به فایل [TROUBLESHOOTING.md](TROUBLESHOOTING.md) مراجعه کنید.
+If you encounter any issues, refer to [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
-### مشکلات رایج
+### Common Issues
 
-1. **خطای 404**: مطمئن شوید سرور در حال اجرا است
-2. **OTP دریافت نمی‌شود**: تنظیمات ایمیل را بررسی کنید
-3. **خطای SMTP**: از App Password برای Gmail استفاده کنید
+1. **404 Error**: Make sure the server is running
+2. **OTP not received**: Check email configuration
+3. **SMTP Error**: Use App Password for Gmail
 
-## 📝 مجوز
+## 📝 License
 
-این پروژه برای استفاده آزاد است.
+This project is free to use.
 
-## 🤝 مشارکت
+## 🤝 Contributing
 
-مشارکت‌ها، پیشنهادات و گزارش باگ‌ها خوش‌آمد هستند! لطفاً:
+Contributions, suggestions, and bug reports are welcome! Please:
 
-1. Fork کنید
-2. یک branch ایجاد کنید (`git checkout -b feature/AmazingFeature`)
-3. تغییرات را commit کنید (`git commit -m 'Add some AmazingFeature'`)
-4. Push کنید (`git push origin feature/AmazingFeature`)
-5. Pull Request باز کنید
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📧 پشتیبانی
+## 📧 Support
 
-در صورت بروز مشکل یا سوال:
+If you encounter any issues or have questions:
 
-- 📖 به [TROUBLESHOOTING.md](TROUBLESHOOTING.md) مراجعه کنید
-- 🐛 یک Issue ایجاد کنید
-- 💬 سوالات خود را در Discussions مطرح کنید
+- 📖 Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+- 🐛 Open an Issue
+- 💬 Ask questions in Discussions
 
-## 🌟 ویژگی‌های آینده
+## 🌟 Future Features
 
-- [ ] پشتیبانی از 2FA (Two-Factor Authentication)
-- [ ] بازیابی رمز عبور
-- [ ] تغییر اطلاعات کاربر
-- [ ] پشتیبانی از چندین زبان
-- [ ] اتصال به دیتابیس واقعی (PostgreSQL, MySQL)
-- [ ] پشتیبانی از OAuth (Google, GitHub, ...)
-- [ ] لاگ‌گیری و مانیتورینگ
-- [ ] تست‌های خودکار
+- [ ] 2FA (Two-Factor Authentication) support
+- [ ] Password recovery
+- [ ] User profile update
+- [ ] Multi-language support
+- [ ] Real database integration (PostgreSQL, MySQL)
+- [ ] OAuth support (Google, GitHub, etc.)
+- [ ] Logging and monitoring
+- [ ] Automated tests
 
-## 📊 آمار پروژه
+## 📊 Project Stats
 
-- **زبان‌ها**: Python, JavaScript, HTML, CSS
-- **فریمورک**: بدون فریمورک (Raw Python)
-- **ذخیره‌سازی**: JSON Files
-- **پروتکل**: HTTP/1.0
-- **پورت**: 8000
+- **Languages**: Python, JavaScript, HTML, CSS
+- **Framework**: No framework (Raw Python)
+- **Storage**: JSON Files
+- **Protocol**: HTTP/1.0
+- **Port**: 8000
 
 ---
 
 <div align="center">
 
-**ساخته شده با ❤️ برای یادگیری و توسعه**
+**Made with ❤️ for learning and development**
 
-⭐ اگر این پروژه برای شما مفید بود، یک ستاره بدهید!
+⭐ If this project was helpful, please give it a star!
 
 </div>
