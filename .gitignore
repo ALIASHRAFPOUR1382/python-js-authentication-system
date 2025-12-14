@@ -1,0 +1,208 @@
+# ============================================
+# Git Ignore File for Authentication Project
+# ============================================
+
+# ============================================
+# Data Files (User Data, Sessions, OTP)
+# ============================================
+# These files contain sensitive user information
+# and should NEVER be committed to version control
+data/
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!jsconfig.json
+
+# ============================================
+# Email Configuration
+# ============================================
+# Contains sensitive email credentials
+email_config.json
+email_config.py
+*.env
+.env
+.env.local
+.env.*.local
+
+# ============================================
+# Python Cache and Compiled Files
+# ============================================
+# Python bytecode and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================
+# Virtual Environment
+# ============================================
+# Python virtual environments
+venv/
+ENV/
+env/
+.venv
+virtualenv/
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================
+# Operating System Files
+# ============================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# Log Files
+# ============================================
+# Application logs
+*.log
+logs/
+*.log.*
+
+# ============================================
+# Temporary Files
+# ============================================
+# Temporary files and folders
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+
+# ============================================
+# Test Files
+# ============================================
+# Test coverage reports
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.hypothesis/
+
+# ============================================
+# Documentation Build
+# ============================================
+# Documentation build outputs
+docs/_build/
+site/
+
+# ============================================
+# Node Modules (if using any JS build tools)
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# Database Files
+# ============================================
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# Security and Secrets
+# ============================================
+# Secret keys and credentials
+secrets/
+*.key
+*.pem
+*.cert
+*.crt
+*.p12
+*.pfx
+
+# ============================================
+# Project Specific
+# ============================================
+# Test email configuration
+test_email.py.bak
+test_api.html.bak
+
+# Server logs
+server.log
+error.log
+access.log
+
+# ============================================
+# Keep These Files (Important)
+# ============================================
+# Make sure important files are NOT ignored
+!README.md
+!HOW_TO_RUN.md
+!TROUBLESHOOTING.md
+!start_server.bat
+!start_server.sh
+!.gitignore

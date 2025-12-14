@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تست API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            direction: rtl;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>تست API</h1>
+    
+    <div class="test-section">
+        <h2>1. تست اتصال به سرور</h2>
+        <button onclick="testConnection()">تست اتصال</button>
+        <pre id="connectionResult"></pre>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. تست ثبت نام</h2>
+        <button onclick="testRegister()">تست ثبت نام</button>
+        <pre id="registerResult"></pre>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. لاگ‌های Console</h2>
+        <p>لطفاً Console مرورگر را باز کنید (F12) و لاگ‌ها را بررسی کنید.</p>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:8000/api';
+        
+        async function testConnection() {
+            const resultEl = document.getElementById('connectionResult');
+            resultEl.textContent = 'در حال تست...';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/check-auth`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                
+                const data = await response.json();
+                resultEl.textContent = JSON.stringify(data, null, 2);
+                resultEl.className = response.ok ? 'success' : 'error';
+            } catch (error) {
+                resultEl.textContent = `خطا: ${error.message}`;
+                resultEl.className = 'error';
+            }
+        }
+        
+        async function testRegister() {
+            const resultEl = document.getElementById('registerResult');
+            resultEl.textContent = 'در حال تست...';
+            
+            const testData = {
+                first_name: 'تست',
+                last_name: 'کاربر',
+                email: 'test@example.com'
+            };
+            
+            try {
+                console.log('ارسال داده:', testData);
+                
+                const response = await fetch(`${API_BASE_URL}/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify(testData)
+                });
+                
+                console.log('وضعیت پاسخ:', response.status);
+                
+                const text = await response.text();
+                console.log('متن پاسخ:', text);
+                
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    data = { error: 'نمی‌توان JSON را parse کرد', raw: text };
+                }
+                
+                resultEl.textContent = JSON.stringify(data, null, 2);
+                resultEl.className = response.ok ? 'success' : 'error';
+            } catch (error) {
+                resultEl.textContent = `خطا: ${error.message}`;
+                resultEl.className = 'error';
+                console.error('خطای کامل:', error);
+            }
+        }
+    </script>
+</body>
+</html>
+
