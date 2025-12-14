@@ -126,10 +126,7 @@ From the dashboard, click the "Logout" button.
 ├── start_server.bat       # Server startup script (Windows)
 ├── start_server.sh        # Server startup script (Linux/Mac)
 ├── setup_email.py         # Email configuration setup
-├── test_email.py          # Email sending test
-├── cleanup_database.py    # Test data cleanup
 ├── README.md              # This file
-├── HOW_TO_RUN.md         # Running guide
 ├── TROUBLESHOOTING.md    # Troubleshooting guide
 └── .gitignore            # Ignored files
 ```
